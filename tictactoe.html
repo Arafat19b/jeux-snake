@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe — Neon Core</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tictactoe.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="back" href="../index.html">← Menu</a>
+      <div class="title">TIC • TAC • TOE — NEON CORE</div>
+      <div class="info">
+        <div class="score">X: <span id="xWins">0</span></div>
+        <div class="score">O: <span id="oWins">0</span></div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <section class="board-area">
+        <div id="board" class="board" role="grid" aria-label="Plateau de jeu"></div>
+        <div class="controls">
+          <div class="modes">
+            <button id="pvpBtn" class="mode active">Joueur vs Joueur</button>
+            <button id="pvcBtn" class="mode">Joueur vs IA</button>
+          </div>
+          <div class="actions">
+            <button id="resetBtn" class="glow">Nouvelle partie</button>
+            <button id="swapBtn">Changer qui commence</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="overlay" class="overlay hidden">
+        <div class="card">
+          <h2 id="resultText">X GAGNE</h2>
+          <p id="detailText">3 en ligne — Belle partie</p>
+          <div class="controls-line">
+            <button id="nextBtn" class="glow">Rejouer</button>
+            <button id="backBtn">Retour</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="leds"><span class="led on"></span><span class="led"></span><span class="led"></span></div>
+      <div class="hint">Clique / Touche (1..9) / Flèches + Entrée — IA: niveau imbattable</div>
+    </footer>
+  </div>
+
+  <script src="tictactoe.js"></script>
+</body>
+</html>

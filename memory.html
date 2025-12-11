@@ -1,0 +1,49 @@
+<!-- memory.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory — Neon Arcade</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="memory.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="back" href="../index.html">← Menu</a>
+    <div class="title">MEMORY — NEON ARCADE</div>
+    <div class="info">
+      <div class="score">Coups: <span id="moves">0</span></div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="controls">
+      <label for="difficulty">Difficulté :</label>
+      <select id="difficulty">
+        <option value="easy">Facile</option>
+        <option value="medium">Moyen</option>
+        <option value="hard">Difficile</option>
+      </select>
+      <button id="resetBtn" class="glow">Nouvelle partie</button>
+    </div>
+
+    <section id="board" class="board"></section>
+    <section id="overlay" class="overlay hidden">
+      <div class="card">
+        <h2>Victoire !</h2>
+        <p>Vous avez trouvé toutes les paires 🎉</p>
+        <button id="nextBtn" class="glow">Rejouer</button>
+        <button id="backBtn">Retour</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="leds"><span class="led on"></span><span class="led"></span><span class="led"></span></div>
+  </footer>
+</div>
+<script src="memory.js"></script>
+</body>
+</html>

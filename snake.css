@@ -1,0 +1,68 @@
+/* Snake — Neon Core style.css (multi-niveaux) */
+:root{
+  --bg: #050010;
+  --panel: rgba(255,255,255,0.02);
+  --pink: #ff3ec5;
+  --violet: #8a4dff;
+  --cyan: #00f0ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Orbitron',sans-serif;background:linear-gradient(180deg,#050010,#0b0020);color:#fff;-webkit-font-smoothing:antialiased}
+body{display:flex;align-items:stretch;justify-content:center;padding:18px}
+
+/* wrapper centers content */
+.wrapper{width:100%;max-width:1100px;display:flex;flex-direction:column;gap:16px;position:relative}
+
+/* header */
+.game-header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.back{color:#fff;text-decoration:none;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:var(--panel)}
+.title{font-size:18px;color:var(--pink);text-shadow:0 0 12px rgba(255,62,197,0.12)}
+.scores{display:flex;gap:12px;align-items:center}
+.scores div{font-size:14px;opacity:0.9}
+
+/* game area */
+.game-area{position:relative;display:flex;align-items:center;justify-content:center;padding:12px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));box-shadow:0 20px 80px rgba(138,77,255,0.03);border:1px solid rgba(255,255,255,0.03)}
+
+/* responsive canvas */
+#gameCanvas{display:block;width:100%;height:calc(100vh - 280px);max-height:760px;border-radius:12px;background:linear-gradient(180deg,#02000a,#030018);border:3px solid rgba(255,62,197,0.12);box-shadow:0 10px 40px rgba(138,77,255,0.06) inset}
+
+/* overlays */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:all 260ms ease}
+.hidden{display:none;opacity:0;pointer-events:none}
+.overlay .card{width:360px;padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);text-align:center;box-shadow:0 20px 60px rgba(138,77,255,0.06)}
+.overlay h2{font-size:22px;margin:6px 0;color:var(--pink)}
+.overlay p{color:#ddd}
+.controls-line{display:flex;gap:12px;justify-content:center;margin-top:12px}
+button, .btn{
+  font-family:'Orbitron',sans-serif;
+  cursor:pointer;border-radius:10px;padding:10px 16px;border:1px solid rgba(255,255,255,0.06);
+  background:linear-gradient(90deg, rgba(255,62,197,0.08), rgba(138,77,255,0.06));color:white;
+  box-shadow:0 8px 30px rgba(138,77,255,0.05);
+}
+button.glow{box-shadow:0 10px 40px rgba(255,62,197,0.16);transform:translateY(0)}
+button:active{transform:translateY(2px)}
+
+/* Level-up special */
+#levelUp .card{width:420px;background:linear-gradient(90deg, rgba(255,62,197,0.12), rgba(138,77,255,0.08));transform:scale(1.02);border:1px solid rgba(255,255,255,0.06)}
+#levelUp h2{font-size:30px;letter-spacing:2px; color: var(--cyan); text-shadow: 0 0 18px var(--cyan);}
+
+/* touch controls */
+.touch-controls{position:absolute;right:18px;bottom:18px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.touch-controls .tbtn{width:48px;height:48px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);background:linear-gradient(90deg, rgba(255,62,197,0.06), rgba(138,77,255,0.04));font-size:18px;color:white;cursor:pointer}
+.touch-controls .trow{display:flex;gap:8px}
+
+/* footer */
+.game-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.leds{display:flex;gap:8px}
+.led{width:10px;height:10px;border-radius:10px;background:rgba(255,255,255,0.06)}
+.led.on{background:var(--pink);box-shadow:0 0 16px var(--pink)}
+
+.small{opacity:0.7;font-size:12px}
+
+/* mobile niceties */
+@media (max-width:720px){
+  .overlay .card{width:92vw}
+  #gameCanvas{height:56vh}
+  .touch-controls{right:10px;bottom:10px}
+}

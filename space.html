@@ -1,0 +1,49 @@
+<!-- space.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Invaders — Neon Arcade</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="space.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="back" href="../index.html">← Menu</a>
+    <div class="title">SPACE INVADERS — NEON ARCADE</div>
+    <div class="info">
+      <div class="score">Score: <span id="score">0</span></div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <canvas id="gameCanvas"></canvas>
+    <div class="controls">
+      <label for="difficulty">Difficulté :</label>
+      <select id="difficulty">
+        <option value="easy">Facile</option>
+        <option value="medium">Moyen</option>
+        <option value="hard">Difficile</option>
+      </select>
+      <button id="resetBtn" class="glow">Nouvelle partie</button>
+    </div>
+
+    <section id="overlay" class="overlay hidden">
+      <div class="card">
+        <h2>Game Over !</h2>
+        <p>Score final: <span id="finalScore">0</span></p>
+        <button id="nextBtn" class="glow">Rejouer</button>
+        <button id="backBtn">Retour</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="leds"><span class="led on"></span><span class="led"></span><span class="led"></span></div>
+  </footer>
+</div>
+<script src="space.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake — Neon Core (Multi-niveaux)</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="snake.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header class="game-header">
+      <a class="back" href="../index.html" aria-label="Retour au menu">← Menu</a>
+      <div class="title">🐍 SNAKE — NEON CORE</div>
+      <div class="scores">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="level">Niveau: <span id="level">1</span></div>
+        <div class="highscore">Meilleur: <span id="highscore">0</span></div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas" aria-label="Zone de jeu Snake"></canvas>
+
+      <!-- Overlay screens -->
+      <div class="overlay" id="startScreen">
+        <div class="card">
+          <h2>Snake — Neon Core</h2>
+          <p>Réflexes. Stratégie. Neon. Les niveaux évoluent automatiquement !</p>
+          <div class="controls-line">
+            <button id="playBtn" class="glow">JOUER</button>
+            <button id="instructionsBtn">INSTRUCTIONS</button>
+          </div>
+          <p class="hint">Touches: ↑ ↓ ← → ou Z Q S D — Sur mobile : swipe</p>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="levelUp">
+        <div class="card">
+          <h2 id="levelUpText">NIVEAU SUIVANT</h2>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="gameOver">
+        <div class="card">
+          <h2>GAME OVER</h2>
+          <p>Score final : <span id="finalScore">0</span></p>
+          <div class="controls-line">
+            <button id="restartBtn" class="glow">REJOUER</button>
+            <button id="backMenuBtn">RETOUR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="instructions">
+        <div class="card">
+          <h2>INSTRUCTIONS</h2>
+          <ul>
+            <li>Mange les fruits pour grandir.</li>
+            <li>Évite les murs, les obstacles et ta propre queue.</li>
+            <li>La vitesse et les obstacles augmentent avec les niveaux.</li>
+          </ul>
+          <div class="controls-line">
+            <button id="instrClose">FERMER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- On-screen touch controls -->
+      <div class="touch-controls" id="touchControls" aria-hidden="false">
+        <button data-dir="up" class="tbtn">▲</button>
+        <div class="trow">
+          <button data-dir="left" class="tbtn">◄</button>
+          <button data-dir="down" class="tbtn">▼</button>
+          <button data-dir="right" class="tbtn">►</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <div class="leds">
+        <span class="led on"></span>
+        <span class="led"></span>
+        <span class="led"></span>
+      </div>
+      <div class="small">Neon Core • Mini Arcade</div>
+    </footer>
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>
