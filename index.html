@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Arcade — Neon Core</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <main class="stage">
+    <header class="topbar">
+      <div class="logo-glow">NEON <span>CORE</span></div>
+      <div class="top-controls">
+        <button id="muteBtn" aria-label="Mute sound">🔇</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>MINI ARCADE</h1>
+      <p class="tag">Cyberpunk Collection — sélectionne ton défi</p>
+      <a class="enter-btn" id="enterBtn">ENTRER DANS L'ARCADE</a>
+    </section>
+
+    <section class="panel hidden" id="panel" tabindex="-1">
+      <!-- Card example: each play button uses a real href to avoid path bugs -->
+      <article class="card" tabindex="0">
+        <div class="card-art">🐍</div>
+        <h3>Snake</h3>
+        <p>Reflexes & stratégie — classique réinventé.</p>
+        <div class="meta">
+          <a class="btn play" href="snake/snake.html">Jouer</a>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="card-art">❌⭕</div>
+        <h3>Tic Tac Toe</h3>
+        <p>Joue contre un ami ou l'IA.</p>
+        <div class="meta">
+          <a class="btn play" href="tictactoe/tictactoe.html">Jouer</a>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="card-art">🧠</div>
+        <h3>Memory</h3>
+        <p>Teste ta mémoire visuelle.</p>
+        <div class="meta">
+          <a class="btn play" href="memory/memory.html">Jouer</a>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="card-art">🚀</div>
+        <h3>Space Invaders</h3>
+        <p>Survis aux vagues ennemies et fais le meilleur score.</p>
+        <div class="meta">
+          <a class="btn play" href="space/space.html">Jouer</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div class="leds">
+        <span class="led on"></span>
+        <span class="led"></span>
+        <span class="led"></span>
+      </div>
+      <div class="help">Flèches ← → ↑ ↓ pour naviguer • <kbd>Entrée</kbd> pour jouer</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
